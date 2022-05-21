@@ -119,26 +119,40 @@ bool Set::erase(const ItemType& value)
 		
 	}
 
+	// We can now assume that the first value in the set is not equal to the value that the user wants to erase. 
+	// Also, we can safely assume that the set either does not contain the value or has more than one element.
+
 	Node* curr = m_head;
-	Node* del_value = m_head;
 	while (curr->m_next != nullptr)
 	{
 		curr = curr->m_next;
-		if (curr->m_value == value)
-			;
+		if (curr->m_value == value) // if the current node's value is the same as the one the user wants to remove then we will remove it
+		{
+			
+			// If we are removing the last element in the list then we update m_tail
+			if (curr->m_next == nullptr)
+				m_tail = curr->m_prev;
+			else // otherwise we must update the next node's m_prev pointer
+			{
+				curr->m_next->m_prev = curr->m_prev;
+			}
+			curr->m_prev->m_next = curr->m_next; // update the previous node's m_next pointer
+			delete curr;
+			m_size--; // don't forget to update m_size
+			return true; // return true
+
+		}
 	}
-	
+	return false; // Once we determine that the user's input is not in the set then we can return false.
 }
 
 bool Set::contains(const ItemType& value) const
 {
+
+	
 	return false;
 }
 
-bool Set::get(int pos, ItemType& value) const
-{
-	return false;
-}
 
 void Set::swap(Set& other)
 {

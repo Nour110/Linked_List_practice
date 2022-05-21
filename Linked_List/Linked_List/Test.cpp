@@ -20,11 +20,21 @@ int main()
 	assert(nothing.insert(5) == false);
 
 	// Check that the insert method can detect a duplicate value being inserted when that value already somewhere in the set that is neither last or first.
-	assert(nothing.insert(5) == false);
+	assert(nothing.insert(6) == false);
 
 	// Test adding another value to the set
 	assert(nothing.insert(99) == true);
 
 	// Test removing value from empty set
 	assert(actnothing.erase(5) == false);
+
+	assert(nothing.erase(5) == true);
+	assert(nothing.erase(5) == false);
+	assert(nothing.insert(5) == true);
+	assert(nothing.erase(5) == true & nothing.size() == 3);
+	assert(nothing.insert(99) == false);
+	assert(nothing.insert(8) == true);
+	assert(nothing.erase(5) == true);
+
+	assert(actnothing.size() == 0);
 }

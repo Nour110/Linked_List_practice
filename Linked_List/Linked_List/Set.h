@@ -30,10 +30,6 @@ public:
 	// Return true if the value is in the set, otherwise false. 
 
 
-	bool get(int pos, ItemType& value) const;
-	// If 1 <= pos < size(), copy into value the item in the set that is strictly greater than exactly i items in the set and return true.
-	// Otherwise, leave the value unchanged and return false
-
 	void swap(Set& other);
 	// Exchange the contents of this set with the other one
 
