@@ -88,7 +88,46 @@ bool Set::insert(const ItemType& value)
 
 bool Set::erase(const ItemType& value)
 {
-	return false;
+	// If the set is empty then return false
+	if (m_head == nullptr)
+		return false;
+
+	// Here we can assume that the set is nonempty
+
+	// Check if the first value in the set is equal to the value that the user wants to erase. If it is then erase it and update m_head and add new Node.
+	if (m_head->m_value == value)
+	{
+	
+		// Check if there is only one value in the set so we can update m_tail properly to reflect that our set is now empty.
+		if (m_head == m_tail)
+		{
+			m_tail = nullptr;
+			delete m_head;
+			m_head = nullptr;
+			m_size--;
+			return true;
+		}
+		// We can now assume that there are at least 2 values in the set within this if statement
+
+		// Update the set by setting the second value in the set's m_prev to nullptr, then delete the user's inputted value and decrement m_value. Finally, return true
+		Node* holder = m_head->m_next;
+		holder->m_prev = nullptr;
+		delete m_head;
+		m_head = holder;
+		m_size--;
+		return true;
+		
+	}
+
+	Node* curr = m_head;
+	Node* del_value = m_head;
+	while (curr->m_next != nullptr)
+	{
+		curr = curr->m_next;
+		if (curr->m_value == value)
+			;
+	}
+	
 }
 
 bool Set::contains(const ItemType& value) const

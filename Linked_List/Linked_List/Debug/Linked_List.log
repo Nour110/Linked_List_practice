@@ -1,2 +1,6 @@
-﻿  Test.cpp
+﻿  Set.cpp
+C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Linked_List\Set.cpp(128,4): warning C4390: ';': empty controlled statement found; is this the intent?
+  Test.cpp
+  Generating Code...
+C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Linked_List\Set.cpp(131): warning C4715: 'Set::erase': not all control paths return a value
   Linked_List.vcxproj -> C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Debug\Linked_List.exe
