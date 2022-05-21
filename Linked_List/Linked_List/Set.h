@@ -9,29 +9,39 @@ class Set
 {
 public:
 	Set(); // Create an empty set (i.e., one with no items).
+
 	~Set(); // Destructor
+
 	Set& operator=(const Set& rhs); // Assignment operator
+
 	Set(const Set& other); // Copy constructor
 
 	bool empty() const; // Return true if the set is empty, otherwise false
 
-	int size();
+	int size() const; // Return the number of items in the set
 
-	bool insert(const ItemType& value);
+	bool insert(const ItemType& value); 
+	// Insert value into the set if it is not already present. Return true is the value is actually inserted. Leave the set unchanged and return false if the value was not inserted
 
 	bool erase(const ItemType& value);
 	// Remove the value from the set if it is present. Return true if the value was removed; otherwise, leave the set unchanged and return false.
 
 	bool contains(const ItemType& value) const;
+	// Return true if the value is in the set, otherwise false. 
+
 
 	bool get(int pos, ItemType& value) const;
+	// If 1 <= pos < size(), copy into value the item in the set that is strictly greater than exactly i items in the set and return true.
+	// Otherwise, leave the value unchanged and return false
 
 	void swap(Set& other);
+	// Exchange the contents of this set with the other one
+
 
 private:
 	struct Node
 	{
-		Node* n_next;
+		Node* m_next;
 		ItemType m_value;
 		Node* m_prev;
 	};
