@@ -147,9 +147,28 @@ bool Set::erase(const ItemType& value)
 }
 
 bool Set::contains(const ItemType& value) const
-{
+{	// Check if the set is empty, return false if it is.
+	if (m_head == nullptr)
+		return false;
+	Node* curr_h = m_head;
+	Node* curr_t = m_tail;
+	// check if the first or last node in the set = value and return true if it is
 
+	if (curr_h->m_value == value || curr_t->m_value == value)
+		return true;
+	// We can assume that the first and last node in the set != value
+	// Now scan the set starting from the tail and head for the user's value
 	
+	while (curr_h->m_value != curr_t->m_value)
+	{
+		curr_h = curr_h->m_next;
+		if (curr_h->m_value == value)
+			return true;
+		curr_t = curr_t->m_prev;
+		if (curr_t->m_value)
+			return true;
+	}
+	// Return false is the value is not in the set.
 	return false;
 }
 
