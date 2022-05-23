@@ -1,3 +1,4 @@
 ﻿  Test.cpp
-C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Linked_List\Test.cpp(34,2): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Linked_List\Test.cpp(44,2): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
+C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Linked_List\Test.cpp(51,2): warning C4554: '&': check operator precedence for possible error; use parentheses to clarify precedence
   Linked_List.vcxproj -> C:\Users\NourI\Desktop\Nour\Github\Linked_List_practice\Linked_List\Debug\Linked_List.exe
